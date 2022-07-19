@@ -7,15 +7,17 @@ function getValue(){
 
 // bussness logic
 function reverse(message){
-    let messageArr = [];
+    let messageArr = "";
     for(let i=message.length-1;i>=0;i--){
         messageArr+=message[i];
     }
-    return messageArr.toString();
+    return messageArr;
 }
 
 
 function pallendromeCheck(message,reverse){
+    message = message.replace(" ","");
+    reverse = reverse.replace(" ","");
     message = message.toUpperCase();
     reverse = reverse.toUpperCase();
     if(message == reverse){
