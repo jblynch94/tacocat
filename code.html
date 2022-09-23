@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>APP NAME: Coding Challenge by Jacob Lynch</title>
+    <title>Tacocat: Coding Challenge by Jacob Lynch</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html"><img src="/img/J.L 2.svg" height="40px" alt="none" class="d-inline-block border"> App Name</a>
+            <a class="navbar-brand" href="/index.html"><img src="/img/J.L 2.svg" height="40px" alt="none" class="d-inline-block border brand"> Tacocat</a>
             <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -39,16 +39,16 @@
                         <a class="nav-link" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/app.html">The App</a>
+                        <a class="nav-link" aria-current="page" href="/app.html">The App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/code.html">The Code</a>
+                        <a class="nav-link active" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">The Repo</a>
+                        <a class="nav-link" href="https://github.com/jblynch94/tacocat.git">The Repo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="https://jbldevportfolio.netlify.app/">About</a>
                     </li>
                 </ul>
             </div>
@@ -61,29 +61,66 @@
                 <div class="col-12 col-lg-8">
                         <pre class="line-numbers">
                             <code class="language-js">
-                                function getValue(message){
-                                    alert("HELLO WOLRD!");
+                                function getValue(){
+                                    let message = document.getElementById("message").value;
+                                    let revMessage = reverse(message);
+                                    let pallendrome = pallendromeCheck(message, revMessage);
+                                    displayReversed(revMessage, pallendrome);
                                 }
-                                function getValue2(){
-                                    let msg = '';
-                                    msg = document.getElementById("message").value;
-                                    swal.fire(
-                                        {
-                                            backdrop: false,
-                                            title: 'App Name',
-                                            text: msg
-                                        }
-                                    );
+                                
+                                // bussness logic
+                                function reverse(message){
+                                    let messageArr = "";
+                                    for(let i=message.length-1;i>=0;i--){
+                                        messageArr+=message[i];
+                                    }
+                                    return messageArr;
+                                }
+                                
+                                
+                                function pallendromeCheck(message,reverse){
+                                    message = message.replace(" ","");
+                                    reverse = reverse.replace(" ","");
+                                    message = message.toUpperCase();
+                                    reverse = reverse.toUpperCase();
+                                    if(message == reverse){
+                                        return true;
+                                    }
+                                    return false;
+                                }
+                                
+                                // display the reversed string
+                                function displayReversed(revMessage, pallendrome){
+                                    let results = document.getElementById("results");
+                                    results.innerHTML = "";
+                                    let div = document.createElement("div"); 
+                                    results.classList.add("revMessage");
+                                    if(pallendrome==true){
+                                        results.innerHTML = revMessage 
+                                        div.innerHTML = " This is Tacocat approved!!";
+                                        results.appendChild(div);
+                                    }else{
+                                        results.innerHTML = revMessage;
+                                        div.innerHTML = "This in NOT Tococat approved";
+                                        results.appendChild(div);
+                                    }
+                                    
+                                
+                                
                                 }
                             </code>
                         </pre>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <p>the Code is structured in two functions</p>
+                    <p>This Code is structured into four functions</p>
                     <h5>getValue</h5>
-                    <p>Prints an alert to the page</p>
-                    <h5>getValue2</h5>
-                    <p>Displays a user entered message in a sweet alerts window</p>
+                    <p>This function gets the string input.</p>
+                    <h5>reverse</h5>
+                    <p>Reverses the string for testing.</p>
+                    <h5>pallendromeCheck</h5>
+                    <p>Compares the original input to the reversed string.</p>
+                    <h5>displayReversed</h5>
+                    <p>Displays the reversed string and displays result of the pallendrome check.</p>
                 </div>
             </div>
         </div>
@@ -102,8 +139,6 @@
                     <div class="row">
                         <div class="col social"><a href="https://www.linkedin.com/in/jacob-brock-lynch-669930137/" target="_blank"><em class="bi bi-linkedin"></em></a></div>
                         <div class="col social"><a href="https://github.com/jblynch94"><em class="bi bi-github" target="_blank"></em></a></div>
-                        <div class="col social"><a href="#"><em class="bi bi-twitter"></em></a></div>
-                        <div class="col social"><a href="#"><em class="bi bi-youtube"></em></a></div>
                     </div>
                 </div>
             </div>

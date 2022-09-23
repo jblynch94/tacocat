@@ -13,9 +13,8 @@ html,body{
 body{
     display: flex;
     flex-direction: column;
-    background: #373B44;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #358d3c;  /* fallback for old browsers */
+    background-repeat: round;
     color: white;
 }
 .content{
@@ -115,3 +114,11 @@ u{
     border-color: var(--jbl-highlight-color);
     background-color: transparent;
 }
+.logo{
+    border: solid;
+    border-radius: 15px;
+    border-color: var(--jbl-dark-color);     
+ }
+ .brand{
+     background-color: rgba(35, 31, 32, 1);
+ }

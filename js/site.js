@@ -24,6 +24,7 @@ function pallendromeCheck(message,reverse){
         return true;
     }
     return false;
+    //alternative way that uses a for loop to check the pallendrome
     // let stop = Math.ceil(message.length/2);
     // for(let i=0;i<stop;i++){
     //     let reverse = message.length-1-i;
